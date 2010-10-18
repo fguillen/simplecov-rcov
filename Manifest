@@ -1,0 +1,10 @@
+Manifest
+README.rdoc
+Rakefile
+lib/simplecov-csv.rb
+test/fixtures/app/controllers/sample_controller.rb
+test/fixtures/app/models/user.rb
+test/fixtures/results.csv
+test/fixtures/sample.rb
+test/helper.rb
+test/simplecov-csv_test.rb

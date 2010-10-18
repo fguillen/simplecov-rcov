@@ -1,0 +1,4 @@
+File,% covered,Lines,Relevant Lines,Lines covered,Lines missed
+"./fixtures/app/controllers/sample_controller.rb",60,10,5,3,2
+"./fixtures/app/models/user.rb",80,10,5,4,1
+"./fixtures/sample.rb",100,10,5,5,0

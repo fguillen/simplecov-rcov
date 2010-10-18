@@ -1,0 +1,22 @@
+= SimpleCov CSV Formatter gem
+
+Is a CSV formatter for the ruby 1.9+ coverage gem: {SimpleCov}[http://github.com/colszowka/simplecov]
+
+== Install
+
+    $ [sudo] gem install simplecov_csv
+
+== Usage
+
+    require 'simplecov_csv'
+    SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
+
+== TODO
+
+The actual version generates only one simple CSV file.
+
+== Credits
+
+Author:: Fernando Guillen: http://fernandoguillen.info
+Copyright:: Copyright (c) 2010 Fernando Guillen
+License:: Released under the MIT license.

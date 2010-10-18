@@ -1,10 +1,14 @@
 = SimpleCov CSV Formatter gem
 
-Is a CSV formatter for the ruby 1.9+ coverage gem: {SimpleCov}[http://github.com/colszowka/simplecov]
+Is a Rcov style formatter for the ruby 1.9+ coverage gem: {SimpleCov}[http://github.com/colszowka/simplecov]
+
+This formatter only generate one general index.html.
+
+The target of this formatter is to cheat on Hudson so I can use the {Ruby metrics plugin}[http://github.com/hudson/rubymetrics-plugin]
 
 == Install
 
-    $ [sudo] gem install simplecov_csv
+    $ [sudo] gem install simplecov_rcov
 
 == Usage
 
@@ -13,7 +17,7 @@ Is a CSV formatter for the ruby 1.9+ coverage gem: {SimpleCov}[http://github.com
 
 == TODO
 
-The actual version generates only one simple CSV file.
+The actual version generates only one simple index.html file.
 
 == Credits
 

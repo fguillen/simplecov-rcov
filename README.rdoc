@@ -17,7 +17,7 @@ The target of this formatter is to cheat on Hudson so I can use the {Ruby metric
 
 == TODO
 
-The actual version generates only one simple index.html file.
+The actual version generates only one simple */rcov/index.html* file.
 
 == Credits
 

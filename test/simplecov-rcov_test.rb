@@ -2,8 +2,7 @@ require "#{File.dirname(__FILE__)}/helper"
 
 class SimplecovRcovFormatterTest < Test::Unit::TestCase
   def test_format
-    SimpleCov.stubs( :coverage_path ).returns( "/tmp" )
-    SimpleCov::Formatter::RcovFormatter.stubs( :path_result ).returns( 'rcov/coverage_test_index.html' )
+    SimpleCov::Formatter::RcovFormatter.stubs( :path_result ).returns( '/tmp/rcov/coverage_test_index.html' )
     if File.exists?( SimpleCov::Formatter::RcovFormatter.path_result )
       File.delete( SimpleCov::Formatter::RcovFormatter.path_result )
     end
@@ -15,15 +14,10 @@ class SimplecovRcovFormatterTest < Test::Unit::TestCase
     }
 
     @result = SimpleCov::Result.new( @original_result )
-    puts "XXX: @result: #{@result}"
     rcov_result = SimpleCov::Formatter::RcovFormatter.new().format( @result )
     
-    # File.open( "#{File.dirname(__FILE__)}/fixtures/index_1.html", 'w' ) { |f| f.write rcov_result }
-    
-    # File.readlines( source_fixture( 'results.csv' ) ).each do |line|
-    #   assert_match( line.gsub( /^"\./, '' ), csv_result )
-    # end
-    
+    assert_match( File.read( "#{File.dirname(__FILE__)}/fixtures/totals_tr.html"), rcov_result )
+    assert_match( File.read( "#{File.dirname(__FILE__)}/fixtures/file_tr.html"), rcov_result )
     assert( File.exists?( SimpleCov::Formatter::RcovFormatter.path_result ) )
   end
     

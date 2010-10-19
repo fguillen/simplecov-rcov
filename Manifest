@@ -1,10 +1,14 @@
 Manifest
 README.rdoc
 Rakefile
-lib/simplecov-csv.rb
+lib/simplecov-rcov.rb
 test/fixtures/app/controllers/sample_controller.rb
 test/fixtures/app/models/user.rb
-test/fixtures/results.csv
+test/fixtures/file_tr.html
+test/fixtures/index_created.html
+test/fixtures/index_rcov.html
 test/fixtures/sample.rb
+test/fixtures/totals_tr.html
 test/helper.rb
-test/simplecov-csv_test.rb
+test/simplecov-rcov_test.rb
+views/index.erb.html

@@ -21,16 +21,16 @@
         <tfoot>
           <tr>
             <td class="left_align">TOTAL</td>
-            <td class='right_align'><tt>1019</tt></td>
-            <td class='right_align'><tt>757</tt></td>
-            <td class="left_align"><tt class=''>89.21%</tt></td>
-            <td class="left_align"><tt class='coverage_total'>86.13%</tt></td>
+            <td class='right_align'><tt><%= @total_lines %></tt></td>
+            <td class='right_align'><tt><%= @total_lines_code %></tt></td>
+            <td class="left_align"><tt class=''><%= '%.2f' % @total_coverage %>%</tt></td>
+            <td class="left_align"><tt class='coverage_total'><%= '%.2f' % @total_coverage %>%</tt></td>
           </tr>
         </tfoot>
         <tbody>
           <% @files.each do |file| %>
-            <tr class="all_files all_coverage 70 80 90 100 app controllers even">
-              <td class="left_align"><a href="app-controllers-application_controller_rb.html"><%= file.filename.gsub(SimpleCov.root, '.') %></td>
+            <tr class="all_files">
+              <td class="left_align"><%= file.filename.gsub(SimpleCov.root, '.') %></td>
               <td class='right_align'><tt><%= file.lines.count %></tt></td>
               <td class='right_align'><tt><%= file.covered_lines.count + file.missed_lines.count %></tt></td>
               <td class="left_align"><tt class=''><%= '%.2f' % file.covered_percent %>%</tt></td>

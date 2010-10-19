@@ -4,8 +4,9 @@ class SimpleCov::Formatter::RcovFormatter
   def format( result )
     @files = result.files
     
-    @covered_percent = result.covered_percent
-    @total_lines =  result.files.map(&:covered_percent).inject(:+) / files.count.to_f
+    @total_lines =  result.files.map { |e| e.lines.count }.inject(:+)
+    @total_lines_code =  result.files.map { |e| e.covered_lines.count + e.missed_lines.count }.inject(:+)
+    @total_coverage = result.covered_percent
     
     template = ERB.new( File.read( "#{File.dirname(__FILE__)}/../views/index.erb.html" ) )
     rcov_result = template.result( binding )
@@ -16,7 +17,7 @@ class SimpleCov::Formatter::RcovFormatter
       file_result.write rcov_result
     end
     
-    puts "Coverage report generated for #{result.command_name} to #{SimpleCov::Formatter::RcovFormatter.path_result}"
+    puts "Coverage report Rcov style generated for #{result.command_name} to #{SimpleCov::Formatter::RcovFormatter.path_result}"
     
     return rcov_result
   end
@@ -24,6 +25,6 @@ class SimpleCov::Formatter::RcovFormatter
   private
     
     def self.path_result
-      File.join( SimpleCov.coverage_path, SimpleCov::Formatter::CSVFormatter::PATH_RESULT )
+      File.join( SimpleCov.coverage_path, SimpleCov::Formatter::RcovFormatter::PATH_RESULT )
     end
 end

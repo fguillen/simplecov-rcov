@@ -30,7 +30,7 @@
         <tbody>
           <% @files.each do |file| %>
             <tr class="all_files">
-              <td class="left_align"><%= file.filename.gsub(SimpleCov.root, '.') %></td>
+              <td class="left_align"><a href="#<%= file.filename.gsub(SimpleCov.root, '.') %>"><%= file.filename.gsub(SimpleCov.root, '.') %></a></td>
               <td class='right_align'><tt><%= file.lines.count %></tt></td>
               <td class='right_align'><tt><%= file.covered_lines.count + file.missed_lines.count %></tt></td>
               <td class="left_align"><tt class=''><%= '%.2f' % file.covered_percent %>%</tt></td>

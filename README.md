@@ -13,7 +13,7 @@ So if you are looking some kind of workaround to integrate **SimpleCov** with yo
 ## Usage
 
     require 'simplecov_csv'
-    SimpleCov.formatter # SimpleCov::Formatter::RcovFormatter
+    SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
 
 ## TODO
 

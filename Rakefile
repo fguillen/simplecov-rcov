@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'  
 require 'echoe'  
   
-Echoe.new('simplecov-rcov', '0.1.1') do |p|  
+Echoe.new('simplecov-rcov', '0.1.2') do |p|  
   p.description     = "Rcov style formatter for SimpleCov"  
   p.url             = "http://github.com/fguillen/simplecov-rcov"
   p.author          = "Fernando Guillen http://fernandoguillen.info"

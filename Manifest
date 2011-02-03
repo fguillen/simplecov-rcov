@@ -1,5 +1,5 @@
 Manifest
-README.rdoc
+README.md
 Rakefile
 lib/simplecov-rcov.rb
 test/fixtures/app/controllers/sample_controller.rb

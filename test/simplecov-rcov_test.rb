@@ -7,12 +7,6 @@ class SimplecovRcovFormatterTest < Test::Unit::TestCase
       File.delete( SimpleCov::Formatter::RcovFormatter.path_result )
     end
 
-    # Sets the number of lines of source we generate.
-    # If you change it from 900, you'll need to edit the fixtures appropriately.
-    # The number should always be evenly divisible by 3 and the coverage percentage
-    # will always be 50%.
-    # source_lines_count = 900
-
     # keys are fake source files, values are number of lines to generate for that file
     # MAKE SURE these are all evenly divisible by 3
     fixtures = { 'sample.rb' => 141, 'app/models/user.rb' => 165,

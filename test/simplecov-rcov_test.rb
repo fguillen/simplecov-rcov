@@ -11,15 +11,19 @@ class SimplecovRcovFormatterTest < Test::Unit::TestCase
     # If you change it from 900, you'll need to edit the fixtures appropriately.
     # The number should always be evenly divisible by 3 and the coverage percentage
     # will always be 50%.
-    source_lines_count = 900
+    # source_lines_count = 900
 
-    fixtures = ['sample.rb', 'app/models/user.rb', 'app/controllers/sample_controller.rb']
+    # keys are fake source files, values are number of lines to generate for that file
+    # MAKE SURE these are all evenly divisible by 3
+    fixtures = { 'sample.rb' => 141, 'app/models/user.rb' => 165,
+      'app/controllers/sample_controller.rb' => 33 }
     @original_result = {}
     fakeroot = '/fake'
-    fixtures.each do |fixture|
-      @original_result[File.join(fakeroot, fixture)] = generate_coverage_results(source_lines_count)
-      fixture_source_lines = generate_source_lines(fixture, source_lines_count)
-      File.stubs(:readlines).with(File.join(fakeroot, fixture)).returns(fixture_source_lines)
+    fixtures.each_pair do |fixture_file, num_lines|
+      @original_result[File.join(fakeroot, fixture_file)] =
+        generate_coverage_results(num_lines)
+      fixture_source_lines = generate_source_lines(fixture_file, num_lines)
+      File.stubs(:readlines).with(File.join(fakeroot, fixture_file)).returns(fixture_source_lines)
       SimpleCov.stubs(:root).returns(fakeroot)
     end
 
@@ -33,10 +37,38 @@ class SimplecovRcovFormatterTest < Test::Unit::TestCase
 
   def generate_coverage_results(num_lines)
     result_types = [nil, 0, 1]
-    each_result_count = num_lines / 3
     results = []
-    each_result_count.times do
-      results += result_types
+    case num_lines
+    when 1..100
+      (num_lines*0.10).round.times do
+        results << result_types[0]
+      end
+      (num_lines*0.20).round.times do
+        results << result_types[1]
+      end
+      (num_lines*0.70).round.times do
+        results << result_types[2]
+      end
+    when 100..150
+      (num_lines*0.20).round.times do
+        results << result_types[0]
+      end
+      (num_lines*0.40).round.times do
+        results << result_types[1]
+      end
+      (num_lines*0.40).round.times do
+        results << result_types[2]
+      end
+    else
+      (num_lines*0.05).round.times do
+        results << result_types[0]
+      end
+      (num_lines*0.15).round.times do
+        results << result_types[1]
+      end
+      (num_lines*0.80).round.times do
+        results << result_types[2]
+      end
     end
     rand_results = []
     results.count.times do

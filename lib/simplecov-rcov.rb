@@ -24,6 +24,16 @@ class SimpleCov::Formatter::RcovFormatter
 
   private
 
+  def lines_covered(file_list)
+    return 0.0 if file_list.length == 0
+    file_list.map {|f| f.covered_lines.count }.inject(&:+)
+  end
+
+  def lines_missed(file_list)
+    return 0.0 if file_list.length == 0
+    file_list.map {|f| f.missed_lines.count }.inject(&:+)
+  end
+
   def lines_of_code(file_list)
     lines_missed(file_list) + lines_covered(file_list)
   end

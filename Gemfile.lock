@@ -1,0 +1,24 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    echoe (4.3.1)
+      gemcutter
+      rubyforge
+    gemcutter (0.6.1)
+    json_pure (1.5.1)
+    mocha (0.9.11)
+      rake
+    rake (0.8.7)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
+    simplecov (0.4.0)
+      simplecov-html (~> 0.4.0)
+    simplecov-html (0.4.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  echoe
+  mocha
+  simplecov

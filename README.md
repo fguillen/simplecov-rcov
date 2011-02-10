@@ -14,7 +14,7 @@ So if you are looking some kind of workaround to integrate **SimpleCov** with yo
 
     require 'simplecov_csv'
     SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
-
+    
 ## TODO
 
 The actual version generates only one simple **/rcov/index.html** file.
@@ -22,5 +22,6 @@ The actual version generates only one simple **/rcov/index.html** file.
 ## Credits
 
 * Author: [Fernando Guillen](http://fernandoguillen.info)
+* Contributors: [Wes Morgan](http://github.com/cap10morgan)
 * Copyright: Copyright (c) 2010 Fernando Guillen
 * License: Released under the MIT license.

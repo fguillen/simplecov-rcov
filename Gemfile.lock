@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    simplecov-rcov (0.1.4)
+      simplecov
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -21,4 +27,4 @@ PLATFORMS
 DEPENDENCIES
   echoe
   mocha
-  simplecov
+  simplecov-rcov!

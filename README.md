@@ -8,13 +8,57 @@ So if you are looking some kind of workaround to integrate **SimpleCov** with yo
 
 ## Install
 
-    $ [sudo] gem install simplecov_rcov
+    $ [sudo] gem install simplecov-rcov
 
 ## Usage
 
-    require 'simplecov_csv'
+    require 'simplecov-rcov'
     SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
     
+Or if you want to share this formatter with another formatter like *HTML formatter* you can add both:
+
+    require 'simplecov'
+    require 'simplecov-rcov'
+    class SimpleCov::Formatter::MergedFormatter
+      def format(result)
+         SimpleCov::Formatter::HTMLFormatter.new.format(result)
+         SimpleCov::Formatter::RcovFormatter.new.format(result)
+      end
+    end
+    SimpleCov.formatter = SimpleCov::Formatter::MergedFormatter
+
+You can also add a flag support so if you don't run the tests activating the *COVERAGE* environment variable to *on* the coverage report won't be used:
+
+    if( ENV['COVERAGE'] == 'on' )
+      require 'simplecov'
+      require 'simplecov-rcov'
+      class SimpleCov::Formatter::MergedFormatter
+        def format(result)
+           SimpleCov::Formatter::HTMLFormatter.new.format(result)
+           SimpleCov::Formatter::RcovFormatter.new.format(result)
+        end
+      end
+      SimpleCov.formatter = SimpleCov::Formatter::MergedFormatter
+      SimpleCov.start 'rails' do
+        add_filter "/vendor/"
+      end
+    end
+
+Run it using this:
+
+    $ COVERAGE=on rake test
+    
+## ISSUES
+
+To add the gem to the **Gemfile** try to do it this way:
+
+    gem 'simplecov', :require => false
+    gem 'simplecov-rcov', :require => false
+
+And require the gems just before use the *SimpleCov* constant, like in the examples above.
+    
+If not could be *Uninitialized constant SimpleCov* issues.
+
 ## TODO
 
 The actual version generates only one simple **/rcov/index.html** file.

@@ -1,13 +1,18 @@
-require 'rubygems'
-require 'rake'
-require 'echoe'
+require 'bundler'
+Bundler::GemHelper.install_tasks
 
-Echoe.new('simplecov-rcov', '0.1.4') do |p|
-  p.description     = "Rcov style formatter for SimpleCov"
-  p.url             = "http://github.com/fguillen/simplecov-rcov"
-  p.author          = ["Fernando Guillen http://fernandoguillen.info", "Wes Morgan http://github.com/cap10morgan"]
-  p.email           = ["fguillen.mail@gmail.com", "cap10morgan@gmail.com"]
-  p.ignore_pattern  = ["tmp/*", "script/*"]
-  p.development_dependencies = ['echoe', 'mocha']
-  p.runtime_dependencies = ['simplecov']
+require 'rake/testtask'
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'lib' << 'test'
+  test.pattern = 'test/**/test_*.rb'
+  test.verbose = true
+end
+
+task :default => :test
+
+require 'rake/rdoctask'
+Rake::RDocTask.new do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('lib/**/*.rb')
 end

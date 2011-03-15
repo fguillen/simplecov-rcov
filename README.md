@@ -14,7 +14,7 @@ So if you are looking some kind of workaround to integrate **SimpleCov** with yo
 
     require 'simplecov-rcov'
     SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
-    
+
 Or if you want to share this formatter with another formatter like *HTML formatter* you can add both:
 
     require 'simplecov'
@@ -47,7 +47,7 @@ You can also add a flag support so if you don't run the tests activating the *CO
 Run it using this:
 
     $ COVERAGE=on rake test
-    
+
 ## ISSUES
 
 To add the gem to the **Gemfile** try to do it this way:
@@ -56,7 +56,7 @@ To add the gem to the **Gemfile** try to do it this way:
     gem 'simplecov-rcov', :require => false
 
 And require the gems just before use the *SimpleCov* constant, like in the examples above.
-    
+
 If not could be *Uninitialized constant SimpleCov* issues.
 
 ## TODO
@@ -66,6 +66,6 @@ The actual version generates only one simple **/rcov/index.html** file.
 ## Credits
 
 * Author: [Fernando Guillen](http://fernandoguillen.info)
-* Contributors: [Wes Morgan](http://github.com/cap10morgan)
+* Contributors: [Wes Morgan](http://github.com/cap10morgan), [Wandenberg Peixoto](http://github.com/wandenberg)
 * Copyright: Copyright (c) 2010 Fernando Guillen
 * License: Released under the MIT license.

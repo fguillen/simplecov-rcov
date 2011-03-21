@@ -59,10 +59,6 @@ And require the gems just before use the *SimpleCov* constant, like in the examp
 
 If not could be *Uninitialized constant SimpleCov* issues.
 
-## TODO
-
-The actual version generates only one simple **/rcov/index.html** file.
-
 ## Credits
 
 * Author: [Fernando Guillen](http://fernandoguillen.info)

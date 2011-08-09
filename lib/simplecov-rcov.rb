@@ -1,16 +1,18 @@
-require 'bundler'
-Bundler.setup(:default)
-
 require 'erb'
 require 'cgi'
 require 'fileutils'
 require 'time'
+require 'pathname'
+
+require File.expand_path( "#{File.dirname(__FILE__)}/simplecov-rcov/version.rb" )
 
 unless defined?(SimpleCov)
   raise RuntimeError, "simplecov-rcov is a formatter for simplecov. Please update your test helper and gemfile to require 'simplecov'!"
 end
 
 class SimpleCov::Formatter::RcovFormatter
+  UPSTREAM_URL = "https://github.com/fguillen/simplecov-rcov"
+
   def format( result )
     Dir[File.join(File.dirname(__FILE__), '../assets/*')].each do |path|
       FileUtils.cp_r(path, asset_output_path)
@@ -148,5 +150,3 @@ class SimpleCov::Formatter::RcovFormatter
     end
   end
 end
-
-require 'simplecov-rcov/version'

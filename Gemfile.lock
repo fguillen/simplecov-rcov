@@ -1,18 +1,21 @@
 PATH
   remote: .
   specs:
-    simplecov-rcov (0.1.4)
+    simplecov-rcov (0.2.0)
+      simplecov (>= 0.4.1)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    simplecov (0.4.1)
-      simplecov-html (~> 0.4.3)
-    simplecov-html (0.4.3)
+    mocha (0.9.12)
+    simplecov (0.4.2)
+      simplecov-html (~> 0.4.4)
+    simplecov-html (0.4.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  simplecov
+  bundler (>= 1.0.0.rc.6)
+  mocha
   simplecov-rcov!

@@ -8,16 +8,11 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Fernando Guillen http://fernandoguillen.info", "Wes Morgan http://github.com/cap10morgan", "Wandenberg Peixoto http://github.com/wandenberg"]
   s.email       = ["fguillen.mail@gmail.com", "cap10morgan@gmail.com"]
-  s.homepage    = %q{http://github.com/fguillen/simplecov-rcov}
-  s.summary     = %q{Rcov style formatter for SimpleCov}
-  s.description = %q{Rcov style formatter for SimpleCov}
-  s.date        = %q{2011-02-10}
+  s.homepage    = "http://github.com/fguillen/simplecov-rcov"
+  s.summary     = "Rcov style formatter for SimpleCov"
+  s.description = "Rcov style formatter for SimpleCov"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
-  s.extra_rdoc_files = ["README.md", "lib/simplecov-rcov.rb"]
-  s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Simplecov-rcov", "--main", "README.md"]
-  s.rubyforge_project = %q{simplecov-rcov}
-  s.rubygems_version = %q{1.3.7}
+  s.rubyforge_project = "simplecov-rcov"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

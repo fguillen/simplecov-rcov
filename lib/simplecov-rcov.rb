@@ -149,4 +149,5 @@ class SimpleCov::Formatter::RcovFormatter
   end
 end
 
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__)))
 require 'simplecov-rcov/version'

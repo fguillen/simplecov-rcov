@@ -1,5 +1,7 @@
 # SimpleCov Rcov Formatter gem
 
+![SimpleCov Rcov logo](http://farm7.static.flickr.com/6066/6092747137_965f5816ea_o.gif)
+
 Is a Rcov style formatter for the ruby 1.9+ coverage gem: [SimpleCov](http://github.com/colszowka/simplecov).
 
 The target of this formatter is to cheat on **Hudson** so I can use the [Ruby metrics plugin](http://github.com/hudson/rubymetrics-plugin) with **SimpleCov**.

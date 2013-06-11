@@ -41,6 +41,7 @@ class SimpleCov::Formatter::RcovFormatter
     end
 
     puts "Coverage report Rcov style generated for #{result.command_name} to #{SimpleCov::Formatter::RcovFormatter.output_path}"
+    puts "Total Coverage: #{"%3.2f" % @total_coverage}%";
   end
 
   private

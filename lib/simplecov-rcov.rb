@@ -64,7 +64,7 @@ class SimpleCov::Formatter::RcovFormatter
 
   def lines_covered(file_list)
     return 0.0 if file_list.length == 0
-    file_list.map {|f| f.covered_lines.count }.inject(&:+)
+    file_list.map {|f| f.skipped_lines.count + f.covered_lines.count }.inject(&:+)
   end
 
   def lines_missed(file_list)
@@ -118,7 +118,7 @@ class SimpleCov::Formatter::RcovFormatter
 
   def total_coverage_for_report(file)
     return 100.0 if file.lines.count == 0
-    (file.covered_lines.count + file.never_lines.count)  * 100 / file.lines.count.to_f
+    (file.covered_lines.count + file.never_lines.count + file.skipped_lines.count)  * 100 / file.lines.count.to_f
   end
 
   def coverage_threshold_classes(percentage)
@@ -138,15 +138,19 @@ class SimpleCov::Formatter::RcovFormatter
     file_path.split('/')[0..-2] * " "
   end
 
-  def line_css_for(coverage)
-    unless coverage.nil?
-      if coverage > 0
-        "marked"
-      else
-        "uncovered"
-      end
+  def line_css_for(line)
+    if line.skipped?
+      "marked"
     else
-      "inferred"
+      unless line.coverage.nil?
+        if line.coverage > 0
+          "marked"
+        else
+          "uncovered"
+        end
+      else
+        "inferred"
+      end
     end
   end
 end

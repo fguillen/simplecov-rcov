@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/fguillen/simplecov-rcov"
   s.summary     = "Rcov style formatter for SimpleCov"
   s.description = "Rcov style formatter for SimpleCov"
+  s.license     = "MIT"
 
   s.rubyforge_project = "simplecov-rcov"
 

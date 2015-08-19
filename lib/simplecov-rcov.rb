@@ -94,7 +94,7 @@ class SimpleCov::Formatter::RcovFormatter
   end
 
   def asset_output_path
-    return @asset_output_path if @asset_output_path
+    return @asset_output_path if defined?(@asset_output_path) && @asset_output_path
     @asset_output_path = File.join(SimpleCov::Formatter::RcovFormatter.output_path, 'assets', SimpleCov::Formatter::RcovFormatter::VERSION)
     FileUtils.mkdir_p(@asset_output_path)
     @asset_output_path

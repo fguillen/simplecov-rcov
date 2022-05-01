@@ -18,9 +18,9 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-  
+
   s.add_dependency 'simplecov', '>= 0.4.1'
-  
+
   s.add_development_dependency 'bundler', '>= 1.0.0.rc.6'
   s.add_development_dependency 'mocha'
   s.add_development_dependency 'rake', '>=12.3.3'

@@ -23,5 +23,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'bundler', '>= 1.0.0.rc.6'
   s.add_development_dependency 'mocha'
-  s.add_development_dependency 'rake', '>=12.3.3'
+  s.add_development_dependency 'rake'
 end

@@ -54,7 +54,7 @@ class SimpleCov::Formatter::RcovFormatter
   end
 
   def template(name)
-    ERB.new(File.read(File.join(File.dirname(__FILE__), '../views/', "#{name}.erb")), nil, '-')
+    ERB.new(File.read(File.join(File.dirname(__FILE__), '../views/', "#{name}.erb")), trim_mode: '-')
   end
 
   def lines(file_list)

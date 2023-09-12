@@ -47,9 +47,12 @@ class SimpleCov::Formatter::RcovFormatter
 
   def write_file(template, output_filename, binding)
     rcov_result = template.result( binding )
+    if Encoding.default_external == Encoding::UTF_8 && rcov_result.encoding == Encoding::ASCII_8BIT
+      rcov_result.force_encoding( Encoding::UTF_8 )
+    end
 
     File.open( output_filename, "w" ) do |file_result|
-     file_result.write rcov_result
+      file_result.write rcov_result
     end
   end
 

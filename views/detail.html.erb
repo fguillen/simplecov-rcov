@@ -43,7 +43,7 @@
     <table class="details">
       <tbody>
         <%- file.lines.each do |line| -%>
-        <tr class="<%= line_css_for(line.coverage) %>">
+        <tr class="<%= line_css_for(line) %>">
           <td><pre><a name="line<%= line.number.next %>"><%= line.number.next %></a> <%= CGI::escapeHTML(line.src.chomp) %></pre></td>
         </tr>
         <%- end -%>

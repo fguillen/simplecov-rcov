@@ -22,8 +22,6 @@ class SimpleCov::Formatter::RcovFormatter
       h[base] = Pathname.new(base).cleanpath.to_s.gsub(%r{^\w:[/\\]}, "").gsub(/\./, "_").gsub(/[\\\/]/, "-") + ".html"
     }
 
-    generated_on = Time.now
-
     @files = result.files
 
     @total_lines =  result.files.map { |e| e.lines.count }.inject(:+)

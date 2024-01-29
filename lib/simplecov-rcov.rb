@@ -88,7 +88,7 @@ class SimpleCov::Formatter::RcovFormatter
   end
 
   def self.output_path
-    File.join( SimpleCov.coverage_path, "/rcov" )
+    File.expand_path( ENV['SIMPLECOV_RCOV_RESULTS_PATH'] || "rcov", SimpleCov.coverage_path )
   end
 
   def asset_output_path

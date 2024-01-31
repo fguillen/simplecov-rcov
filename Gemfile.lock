@@ -1,0 +1,32 @@
+PATH
+  remote: .
+  specs:
+    simplecov-rcov (0.3.7)
+      simplecov (>= 0.4.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    docile (1.4.0)
+    mocha (2.1.0)
+      ruby2_keywords (>= 0.0.5)
+    rake (13.1.0)
+    ruby2_keywords (0.0.5)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
+
+PLATFORMS
+  x86_64-darwin-19
+
+DEPENDENCIES
+  bundler (>= 1.0.0.rc.6)
+  mocha
+  rake
+  simplecov-rcov!
+
+BUNDLED WITH
+   2.3.12
